@@ -27,13 +27,19 @@ async function fileAccess(){
         };
         
         // checks and prints the text file name and it's contents
-        for (const filecontent of files) {
+        for (const filename of files) {
             //get the full path of the text files
-            const fullTextPath = path.join(textFolderPath, filecontent);
+            const fullTextPath = path.join(textFolderPath, filename);
             //reads the content in the text files
             const textfileContents = await readFile(fullTextPath, 'utf8');
 
-            console.log(`file content: ${filecontent}`);
+            //writeFile(where, what, how) returns = "Task_from_An/todolist_task/backup_1.txt"
+            //const backupFile_path = path.join(textFolderPath, "backup_",filename) 
+
+            //await writeFile(backupFile_path, textfileContents, 'utf8');
+          
+            let where, what, how
+            console.log(`file content: ${filename}`);
             console.log(textfileContents);
             
 
@@ -43,3 +49,4 @@ async function fileAccess(){
         }
 }
 fileAccess()
+
