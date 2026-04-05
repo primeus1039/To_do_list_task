@@ -21,7 +21,10 @@ async function fileAccess(){
                 };
             } 
         };
-        accessCountry(jsonData)
+        for (let region in jsonData) {
+            const countryName = jsonData[region]
+            accessCountry(countryName)
+        };
         
         // checks and prints the text file name and it's contents
         for (const filename of files) {

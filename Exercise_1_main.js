@@ -18,12 +18,7 @@ function searchObject(arraySearch) {
     };
     console.log(country_list);
 };
-
-for (let region in jsonData) {
-    const details = jsonData[region];
-    searchObject(details);
-    // will need explanation on this and the original code
-};
+searchObject(jsonData)
 
 // read text file names and count them
 const imageFolder = './assets';
