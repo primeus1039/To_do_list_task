@@ -1,0 +1,31 @@
+{"Asia": [
+{"ID": 1, "name": "Bar", "Country" : "Japan", "address":"Tokyo, xxxxxx, 000000"},
+{"ID": 2, "name": "Shrine", "Country" : "Japan", "address":"Osaka, xxxxxx, 000000"},  
+{"ID": 3, "name": "Training_Centre","Country": "China", "address": "Shanghai, xxxxxx, 000000"},
+{"ID": 4, "name": "Market","Country": "China", "address": "Shenzen, xxxxxx, 000000"}],
+"Europe" : [
+{"ID": 5, "name": "Pub","Country": "England", "address": "London, xxxxxx, 000000"}, 
+{"ID": 6, "name": "Mall","Country": "England", "address": "Manchester, xxxxxx, 000000"},
+{"ID": 7, "name": "Cafe","Country": "France", "address": "Paris, xxxxxx, 000000"}, 
+{"ID": 8, "name": "Beach","Country": "France", "address": "Nice, xxxxxx, 000000"}],
+"North_America" : [
+{"ID": 9, "name": "Theatre","Country": "USA", "address": "New_York, xxxxxx, 000000"},
+{"ID": 10, "name": "Supermarket","Country": "USA", "address": "Los_Angeles, xxxxxx, 000000"},
+{"ID": 11, "name": "Hockey_Stadium","Country": "Canada", "address": "Montreal, xxxxxx, 000000"},
+{"ID": 12, "name": "Field","Country": "Canada", "address": "Quebec, xxxxxx, 000000"}],
+"South_America" : [
+{"ID": 13, "name": "Beach","Country": "Brazil", "address": "Rio_De_Jeneiro, xxxxxx, 000000"},
+{"ID": 14, "name": "Bar","Country": "Brazil", "address": "Sao_Paulo, xxxxxx, 000000"},
+{"ID": 15, "name": "Bar","Country": "Colombia", "address": "Bogota, xxxxxx, 000000"},
+{"ID": 16, "name": "Bar","Country": "Colombia", "address": "Cali, xxxxxx, 000000"}],
+"Africa": [
+{"ID": 17, "name": "Bar","Country": "South_Africa", "address": "Cape_Town, xxxxxx, 000000"},
+{"ID": 18, "name": "Bar","Country": "South_Africa", "address": "Johannesburg, xxxxxx, 000000"},
+{"ID": 19, "Country": "Ghana", "address": "Kumasi, xxxxxx, 000000"},
+{"ID": 20, "Country": "Ghana", "address": "Accra, xxxxxx, 000000"}],
+"Oceania": [
+{"ID": 21, "name": "Bar","Country": "Australia", "address": "Sydney, xxxxxx, 000000"},
+{"ID": 22, "name": "Bar","Country": "Australia", "address": "Melbourne, xxxxxx, 000000"},
+{"ID": 23, "name": "Bar","Country": "New_Zealand", "address": "Auckland, xxxxxx, 000000"},
+{"ID": 24, "name": "Bar","Country": "New_Zealand", "address": "Christchurch, xxxxxx, 000000"}]
+}
