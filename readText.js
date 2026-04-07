@@ -53,10 +53,15 @@ async function fileAccess(){
             console.log(`file content: ${filename}`);
             console.log(textfileContents);
 
+            //get the number from the text file name
             const getFileNumber = parseInt(filename.replace('.txt', ''));
+            // checks if getFileNumber is a number using double negative
             if(!isNaN(getFileNumber)) {
+                // create new file name
                 const newFileName = `${getFileNumber*3.14}.txt`
+                // creating the new location for file + the name of file
                 const newFileLocation = path.join(textMultiplyPath, newFileName);
+                // creates file
                 await rename(fullTextPath, newFileLocation)
             }
             console.log(parseInt(filename))

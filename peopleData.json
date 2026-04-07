@@ -1,17 +1,17 @@
 [
     {"Name": "Robert", "ID": "P1", "Age": 21, "Gender": "Male", "Education": "Degree", "Address": "City1, 010101"},
-    {"Name": "Lisa", "ID": "P2", "Age": 22, "Gender": "Female", "Education": "Degree", "Address": "City2, 020202"},
-    {"Name": "Brad", "ID": "P3", "Age": 24, "Gender": "Male", "Education": "Highschool", "Address": "City3, 030303"},
+    {"Name": "Lisa", "ID": "P2", "Age": 15, "Gender": "Female", "Education": "Highschool", "Address": "City2, 020202"},
+    {"Name": "Brad", "ID": "P3", "Age": 16, "Gender": "Male", "Education": "Highschool", "Address": "City3, 030303"},
     {"Name": "Sarah", "ID": "P4", "Age": 28, "Gender": "Female", "Education": "Diploma", "Address": "City4, 040404"},
     {"Name": "Lily", "ID": "P5", "Age": 23, "Gender": "Female", "Education": "Diploma", "Address": "City5, 050505"},
     {"Name": "Evans", "ID": "P6", "Age": 34, "Gender": "Male", "Education": "Degree", "Address": "City6, 060606"},
     {"Name": "Yumi", "ID": "P7", "Age": 33, "Gender": "Female", "Education": "Diploma", "Address": "City7, 070707"},
     {"Name": "Craig", "ID": "P8", "Age": 41, "Gender": "Male", "Education": "Degree", "Address": "City8, 080808"},
     {"Name": "Lee", "ID": "P9", "Age": 39, "Gender": "Male", "Education": "Diploma", "Address": "City9, 090909"},
-    {"Name": "Christina", "ID": "P10", "Age": 20, "Gender": "Female", "Education": "Highschool", "Address": "City10, 101010"},
+    {"Name": "Christina", "ID": "P10", "Age": 19, "Gender": "Female", "Education": "Diploma", "Address": "City10, 101010"},
     {"Name": "Harold", "ID": "P11", "Age": 32, "Gender": "Male", "Education": "Degree", "Address": "City11, 111111"},
-    {"Name": "Xueyi", "ID": "P12", "Age": 15, "Gender": "Female", "Education": "Diploma", "Address": "City12, 121212"},
-    {"Name": "Harry", "ID": "P13", "Age": 14, "Gender": "Male", "Education": "Diploma", "Address": "City13, 131313"},
+    {"Name": "Xueyi", "ID": "P12", "Age": 15, "Gender": "Female", "Education": "Highschool", "Address": "City12, 121212"},
+    {"Name": "Harry", "ID": "P13", "Age": 14, "Gender": "Male", "Education": "Highschool", "Address": "City13, 131313"},
     {"Name": "Javier", "ID": "P14", "Age": 48, "Gender": "Male", "Education": "Degree", "Address": "City14, 141414"},
     {"Name": "Mary", "ID": "P15", "Age": 41, "Gender": "Female", "Education": "Degree", "Address": "City15, 151515"}
 ]
