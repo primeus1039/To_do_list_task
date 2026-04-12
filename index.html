@@ -17,6 +17,12 @@
     <div id="allImages"></div>
     
     <script type="module">
+        async function getJson(path) {
+            const res = await fetch(path);
+            const convertedJson = await res.json();
+            return convertedJson
+        };
+
         // get source for link and html node
         const europePageSrc =  'readImages_Europe.html';
         const getEuropeLink = document.getElementById('Europe_Page');
@@ -27,6 +33,12 @@
         const getImage1_ID = document.getElementById("image1");
         const allImagesContainer = document.getElementById("allImages");
         getImage1_ID.src = "./assets/europe_paris.jpg";
+
+        async function main() {
+            const getPeopleData = await getJson('peopleData.json');
+            console.log(getPeopleData)
+        }
+        main()
 
         const arrayImg = [
     'assets/africa_cape_town.jpg',

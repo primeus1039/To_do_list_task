@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Users</title>
+</head>
+<body>
+    <h1>User Info:</h1>
+    <h3 type="text", id="displayUsers"></h3>
+
+
+    <script>
+        async function getJson(path) {
+            const res = await fetch(path);
+            const convertedJson = await res.json();
+            return convertedJson
+        };
+
+        async function main() {
+            const getPeopleData = await getJson('peopleData.json');
+            console.log(getPeopleData)
+            
+            const displayUserContainer = document.getElementById('displayUsers');
+            displayUserContainer.innerHTML = getPeopleData
+        }
+        main()
+
+
+    </script>
+    
+</body>
+</html>
