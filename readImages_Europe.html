@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe Images</title>
+</head>
+<body>
+    <div>
+        <div id="EuropeImages"></div>
+
+    </div>
+    
+    <script>
+        const imageContainer = document.getElementById('EuropeImages');
+        const arrayImg = [
+    'assets/africa_cape_town.jpg',
+    'assets/africa_kumasi.jpg',
+    'assets/asia_shanghai.jpg',
+    'assets/asia_tokyo.jpg',
+    'assets/europe_london.jpg',
+    'assets/europe_paris.jpg',
+    'assets/north_america_montreal.jpg',
+    'assets/north_america_new_york.jpg',
+    'assets/oceania_auckland.jpg',
+    'assets/oceania_sydney.jpg',
+    'assets/south_america_bogota.jpg',
+    'assets/south_america_rio_de_janeiro.jpg'
+    ];
+
+    for (const image of arrayImg) {
+        
+        if (image.includes('europe')) {
+            const imageNodes = document.createElement('img');
+            imageNodes.setAttribute('src', image);
+            imageContainer.appendChild(imageNodes)
+        }
+    }
+    </script>
+</body>
+</html>

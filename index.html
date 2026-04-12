@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imageUploadTask</title>
+</head>
+<body>
+    <div>
+        <h1 id="titleHeading">ImageUpload</h1>
+        <a id="Europe_Page", style="font-size: 100px;">Go to Europe</a>
+        <h3 id="test"></h3>
+        <img id="image1">
+        <img id="image2", src="./assets/europe_london.jpg">
+        
+    </div>
+    <div id="allImages"></div>
+    
+    <script type="module">
+        // get source for link and html node
+        const europePageSrc =  'readImages_Europe.html';
+        const getEuropeLink = document.getElementById('Europe_Page');
+        // updates the source with the page link
+        getEuropeLink.href = europePageSrc
+
+        // gets the source the container and node for the image and updates the source of the image
+        const getImage1_ID = document.getElementById("image1");
+        const allImagesContainer = document.getElementById("allImages");
+        getImage1_ID.src = "./assets/europe_paris.jpg";
+
+        const arrayImg = [
+    'assets/africa_cape_town.jpg',
+    'assets/africa_kumasi.jpg',
+    'assets/asia_shanghai.jpg',
+    'assets/asia_tokyo.jpg',
+    'assets/europe_london.jpg',
+    'assets/europe_paris.jpg',
+    'assets/north_america_montreal.jpg',
+    'assets/north_america_new_york.jpg',
+    'assets/oceania_auckland.jpg',
+    'assets/oceania_sydney.jpg',
+    'assets/south_america_bogota.jpg',
+    'assets/south_america_rio_de_janeiro.jpg'
+    ];
+
+    //for loop for updating a image node
+    for (const image of arrayImg) {
+        //creates a image node
+        const imageNode = document.createElement('img');
+        //sets the source of the node with the image source
+        imageNode.setAttribute("src", image);
+        //updates the imagenode into the body
+        allImagesContainer.appendChild(imageNode);
+    }  
+
+    </script>
+</body>
+</html>
