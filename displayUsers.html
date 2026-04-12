@@ -7,22 +7,52 @@
 </head>
 <body>
     <h1>User Info:</h1>
-    <h3 type="text", id="displayUsers"></h3>
+    <div id="displayUsers"></div>
 
 
     <script>
+        let getPeopleData = null
+
         async function getJson(path) {
             const res = await fetch(path);
             const convertedJson = await res.json();
             return convertedJson
         };
 
-        async function main() {
-            const getPeopleData = await getJson('peopleData.json');
+        function renderUser(data, index) {
+            return `
+            <div>
+                <strong>Name: </strong> ${data.Name} </br>
+                <strong>ID: </strong> ${data.ID} </br>
+                <strong>Age: </strong> ${data.Age} </br>
+                <strong>Gender: </strong> ${data.Gender} </br>
+                <strong>Education: </strong> ${data.Education} </br>
+                <strong>Address: </strong> ${data.Address} </br>
+            </div>
+            <div>
+                <button onclick="greetButton(${index})">Greet</button>
+            </div>
+            <hr/>
+            `
+        }
+        function greetButton(num){
+            console.log(typeof num)
             console.log(getPeopleData)
+            const currentData = getPeopleData[num]
+            alert (`greetings from ${currentData.Name}`)
+        }
+        async function main() {
+            getPeopleData = await getJson('peopleData.json');
+            console.log(getPeopleData);
             
             const displayUserContainer = document.getElementById('displayUsers');
-            displayUserContainer.innerHTML = getPeopleData
+            for (let index = 0; index < getPeopleData.length; index++) {
+                const element = getPeopleData[index];
+                const userData = renderUser(element, index);
+                displayUserContainer.innerHTML += userData;
+            }
+            
+            
         }
         main()
 
