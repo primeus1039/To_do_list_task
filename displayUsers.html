@@ -7,8 +7,18 @@
 </head>
 <body>
     <h1>User Info:</h1>
+    <h1>Average Age</h1>
+    <h1 id="displayAvgAge"></h1>
+    <strong><label for="drpDwnWin">Gender</label></strong>
+        <select id="genderOptions">
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    <hr>
     <div id="displayUsers"></div>
-
+    <div id="displayUsers2"></div>
 
     <script>
         let getPeopleData = null
@@ -35,8 +45,53 @@
             <hr/>
             `
         }
+
+        //task 17-22
+        async function main2 () {
+            getPeopleData = await getJson('peopleData.json');
+            const displayUserContainer2 = document.getElementById("displayUsers2");
+            const getDropDownWin = document.getElementById("genderOptions");
+            const getAvgAge = document.getElementById("displayAvgAge")
+
+            function renderSingleUser(data) {
+                return `
+                <div> 
+                    <strong>Name: </strong> ${data.Name} </br>
+                    <strong>ID: </strong> ${data.ID} </br>
+                    <strong>Age: </strong> ${data.Age} </br>
+                    <strong>Gender: </strong> ${data.Gender} </br>
+                    <strong>Education: </strong> ${data.Education} </br>
+                    <strong>Address: </strong> ${data.Address} </br>
+                    <hr>
+                </div>
+                `
+            }
+
+            // adding event listener when a gender is selected and logging out the selection
+            getDropDownWin.addEventListener("change", function (selection){
+                console.log(selection.target.value)
+            })
+
+            //need to check for drop down value, check for gender of user in each loop
+            function renderAllUser() {
+                let totalAge = null
+                
+                for (let index = 0; index < getPeopleData.length; index++) {
+                    const eachUser = getPeopleData[index];
+                    console.log(eachUser.Gender);
+                    console.log(renderSingleUser(eachUser));
+                    totalAge += Number(eachUser.Age)
+                    displayUserContainer2.innerHTML += renderSingleUser(eachUser);
+                }
+                console.log(totalAge)
+                const averageAge = totalAge/getPeopleData.length
+                getAvgAge.innerHTML = averageAge.toFixed(1)
+            }
+            renderAllUser()  
+        }
+        main2()
+
         function greetButton(num){
-            console.log(typeof num)
             console.log(getPeopleData)
             const currentData = getPeopleData[num]
             alert (`greetings from ${currentData.Name}`)
@@ -51,11 +106,8 @@
                 const userData = renderUser(element, index);
                 displayUserContainer.innerHTML += userData;
             }
-            
-            
         }
-        main()
-
+        // main()
 
     </script>
     
