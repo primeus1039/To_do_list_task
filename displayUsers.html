@@ -9,12 +9,18 @@
     <h1>User Info:</h1>
     <h1>Average Age</h1>
     <h1 id="displayAvgAge"></h1>
-    <strong><label for="drpDwnWin">Gender</label></strong>
+    <strong><label for="drpDwnWin">Gender:</label></strong>
         <select id="genderOptions">
             <option value="all">All</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
+        </select>
+    <strong><label for="randomOptions">Tags:</label></strong>
+        <select id="pickOption">
+            <option value="neither">Default</option>
+            <option value="age">Age</option>
+            <option value="names">Names</option>
         </select>
     <hr>
     <div id="displayUsers"></div>
@@ -51,7 +57,8 @@
             getPeopleData = await getJson('peopleData.json');
             const displayUserContainer2 = document.getElementById("displayUsers2");
             const getDropDownWin = document.getElementById("genderOptions");
-            const getAvgAge = document.getElementById("displayAvgAge")
+            const getAvgAge = document.getElementById("displayAvgAge");
+            const getRandomOptionsWin = document.getElementById("pickOption")
 
             function renderSingleUser(data) {
                 return `
@@ -68,20 +75,28 @@
             }
 
             // adding event listener when a gender is selected and logging out the selection
-            getDropDownWin.addEventListener("change", function (selection){
-                console.log(selection.target.value)
-            })
+            // **needs explanation for how renderAllUser is interacting with the Event Listener
+            getDropDownWin.addEventListener("change", renderAllUser)
+            getRandomOptionsWin.addEventListener("change", renderAllUser)
 
             //need to check for drop down value, check for gender of user in each loop
             function renderAllUser() {
-                let totalAge = null
+                //clears page
+                displayUserContainer2.innerHTML = ""
+                let totalAge = 0
                 
                 for (let index = 0; index < getPeopleData.length; index++) {
                     const eachUser = getPeopleData[index];
                     console.log(eachUser.Gender);
                     console.log(renderSingleUser(eachUser));
-                    totalAge += Number(eachUser.Age)
-                    displayUserContainer2.innerHTML += renderSingleUser(eachUser);
+                    totalAge += Number(eachUser.Age);
+                    //line that needs more explanation
+                    if (getDropDownWin.value === "all" || eachUser.Gender.toLowerCase() === getDropDownWin.value){
+                        displayUserContainer2.innerHTML += renderSingleUser(eachUser);
+                    }
+                    if (getRandomOptionsWin.value === "neither") {
+                        console.log("it works")
+                    }
                 }
                 console.log(totalAge)
                 const averageAge = totalAge/getPeopleData.length
@@ -91,6 +106,8 @@
         }
         main2()
 
+
+        //-------------------------------------------------
         function greetButton(num){
             console.log(getPeopleData)
             const currentData = getPeopleData[num]
